@@ -5,7 +5,8 @@ import java.io.Serializable;
 
 public class BaseEntity implements Serializable {
 
-    private Long id;
+    private static final long serialVersionUID = -4807748487473705462L;
+	private Long id;
 
     public boolean isNew() {
         return this.id == null;

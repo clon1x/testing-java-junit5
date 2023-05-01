@@ -6,7 +6,8 @@ import java.util.Set;
 
 public class Vet extends Person {
 
-    private Set<Speciality> specialities = new HashSet<>();
+    private static final long serialVersionUID = 4425200595065208994L;
+	private Set<Speciality> specialities = new HashSet<>();
 
     public Vet(Long id, String firstName, String lastName, Set<Speciality> specialities) {
         super(id, firstName, lastName);

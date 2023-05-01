@@ -1,15 +1,15 @@
 package guru.springframework.sfgpetclinic.formatters;
 
-import guru.springframework.sfgpetclinic.fauxspring.Formatter;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
-
 import java.text.ParseException;
 import java.util.Collection;
 import java.util.Locale;
 
+import guru.springframework.sfgpetclinic.fauxspring.Formatter;
+import guru.springframework.sfgpetclinic.model.PetType;
+import guru.springframework.sfgpetclinic.services.PetTypeService;
 
-public class PetTypeFormatter implements Formatter {
+
+public class PetTypeFormatter implements Formatter<PetType> {
 
     private final PetTypeService petTypeService;
 

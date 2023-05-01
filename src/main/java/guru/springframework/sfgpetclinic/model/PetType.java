@@ -3,7 +3,8 @@ package guru.springframework.sfgpetclinic.model;
 
 public class PetType extends BaseEntity {
 
-    private String name;
+    private static final long serialVersionUID = -2655924175357514942L;
+	private String name;
 
     @Override
     public String toString() {

@@ -7,7 +7,8 @@ import java.util.Set;
 
 public class Pet extends BaseEntity{
 
-    private String name;
+    private static final long serialVersionUID = 2335335962862509385L;
+	private String name;
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;
