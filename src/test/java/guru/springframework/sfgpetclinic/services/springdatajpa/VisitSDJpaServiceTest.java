@@ -1,9 +1,12 @@
 package guru.springframework.sfgpetclinic.services.springdatajpa;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
@@ -30,11 +33,20 @@ class VisitSDJpaServiceTest {
     @Test
     void testFindAll() {
         
+        // given
+        Visit visit = new Visit();
+        Set<Visit> visits = new HashSet<>();
+        visits.add(visit);
+        when(visitRepository.findAll())
+            .thenReturn(visits);
+        
         // when 
         Set<Visit> actual = service.findAll();
         
         // then
-        assertNotNull(actual);
+        assertAll("Check Results",
+                        () -> assertNotNull(actual),
+                        () -> assertEquals(1L, actual.size()));
         verify(visitRepository).findAll();
     }
 
